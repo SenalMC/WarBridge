@@ -1,5 +1,5 @@
 # Warbridge
-
+https://www.spigotmc.org/resources/warbridge.134284
 ## ENGLISH
 
 Warbridge is a fully configurable Warbridge minigame plugin designed for BungeeCord / Waterfall networks.
@@ -46,7 +46,7 @@ Full documentation:
 ---
 
 ## 中文说明
-
+https://www.spigotmc.org/resources/warbridge.134284
 Warbridge 是一个为 BungeeCord / Waterfall 群组服务器设计的战桥小游戏插件。
 
 本插件采用 **一服一局** 架构，每个子服即一场独立游戏。
