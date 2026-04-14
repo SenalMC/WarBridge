@@ -34,7 +34,7 @@ Then you can use the dependency below in your expansion project:
 <dependency>
     <groupId>top.cnuo</groupId>
     <artifactId>warbridge</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.5</version>
     <scope>provided</scope>
 </dependency>
 ```
@@ -55,7 +55,7 @@ Then you can use the dependency below in your expansion project:
 <dependency>
     <groupId>top.cnuo</groupId>
     <artifactId>warbridge</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.5</version>
     <scope>provided</scope>
 </dependency>
 ```
