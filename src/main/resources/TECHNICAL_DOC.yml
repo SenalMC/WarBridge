@@ -1,0 +1,96 @@
+# Warbridge 技术文档（中文）
+# 说明：本文件仅作为维护/二次开发文档，不参与插件运行配置。
+plugin:
+  name: Warbridge
+  version: 1.0.1-maint
+  main: top.cnuo.warbridge.WarbridgePlugin
+  target: Spigot 1.8.8 / 1.8.9
+  author: Chirnuo
+
+architecture:
+  model: 单子服单房间
+  states:
+    - PENDING
+    - HOLDING
+    - GAMING
+    - GAMEOVER
+    - EDIT
+  round_states:
+    - NONE
+    - PREPARE
+    - RUNNING
+    - ENDING
+
+public_api:
+  interface: top.cnuo.warbridge.api.WarbridgeApi
+  service_registration: Bukkit ServicesManager
+  get_instance_example:
+    - 'WarbridgeApi api = Bukkit.getServicesManager().load(WarbridgeApi.class);'
+    - 'if (api != null) { api.getState(); }'
+  methods:
+    - getState()
+    - getRoundState()
+    - isInGame(Player)
+    - isSpectator(Player)
+    - isRespawning(Player)
+    - getPlayerTeam(Player)
+    - getPlayerTeamObject(Player)
+    - getPlayerStats(Player)
+    - getPlayersCount()
+    - getActivePlayersCount()
+    - getRoundNumber()
+    - getCountdown()
+    - getGameSeconds()
+    - getWinnerName()
+    - getTeams()
+
+events:
+  state:
+    - top.cnuo.warbridge.api.event.WarbridgeStateChangeEvent
+  game:
+    - top.cnuo.warbridge.api.event.WarbridgeGameStartEvent
+    - top.cnuo.warbridge.api.event.WarbridgeGameEndEvent
+  round:
+    - top.cnuo.warbridge.api.event.WarbridgeRoundStartEvent
+    - top.cnuo.warbridge.api.event.WarbridgeRoundEndEvent
+  player:
+    - top.cnuo.warbridge.api.event.WarbridgePlayerJoinGameEvent
+    - top.cnuo.warbridge.api.event.WarbridgePlayerLeaveGameEvent
+    - top.cnuo.warbridge.api.event.WarbridgePlayerGoalEvent
+    - top.cnuo.warbridge.api.event.WarbridgePlayerKillEvent
+    - top.cnuo.warbridge.api.event.WarbridgePlayerDeathEvent
+    - top.cnuo.warbridge.api.event.WarbridgePlayerRespawnEvent
+
+expand_plugin_guide:
+  recommended_name: WarBridgeExpand
+  recommended_depend: 'depend: [Warbridge]'
+  recommended_softdepend: 'softdepend: [PlaceholderAPI]'
+  usage:
+    - 监听击杀/进球/胜负事件发经验和硬币
+    - 使用 WarbridgeApi 获取当前状态、队伍和个人战绩
+    - 奖励、赛季、商城、排行榜尽量写在扩展插件里，不要写死到核心插件
+
+key_classes:
+  session: top.cnuo.warbridge.game.GameSession
+  command: top.cnuo.warbridge.command.WarbridgeCommand
+  placeholders: top.cnuo.warbridge.placeholder.PlaceholderService
+  papi: top.cnuo.warbridge.placeholder.WarbridgeExpansion
+  scoreboard: top.cnuo.warbridge.scoreboard.BoardManager
+
+maintenance_tips:
+  - setup 完成后先执行 /warbridge check
+  - EDIT 状态下不会自动开局
+  - 如果未来继续拆分插件，优先依赖 WarbridgeApi 与事件，不要直接反射访问内部类
+  - TECHNICAL_DOC.yml 与 Help.yml 不参与运行，只用于维护与二开说明
+
+team-selector:
+  enabled-stage: "仅在 PENDING 和 HOLDING 阶段可用。"
+  item: "玩家可以右键物品栏第 5 格的绿宝石打开队伍选择菜单。"
+  menu: "菜单会显示队伍颜色、队伍名称、当前人数、还可加入人数。"
+  note: "如果玩家不手动选队，游戏开始时仍会自动均衡分配。"
+
+
+# Added in v6
+# sounds.yml controls kill/death/goal/respawn sounds.
+# game.yml now contains bow-cooldown display mode and disconnect-rule.
+# Use /warbridge setup finish to validate required setup items.

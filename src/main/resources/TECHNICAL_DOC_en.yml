@@ -1,0 +1,52 @@
+# Warbridge technical document (English)
+# This file is documentation only and is not used as a runtime config.
+plugin:
+  name: Warbridge
+  version: 1.0.1-maint
+  main: top.cnuo.warbridge.WarbridgePlugin
+  target: Spigot 1.8.8 / 1.8.9
+  author: Chirnuo
+
+architecture:
+  model: one_subserver_one_room
+  states: [PENDING, HOLDING, GAMING, GAMEOVER, EDIT]
+  round_states: [NONE, PREPARE, RUNNING, ENDING]
+
+public_api:
+  interface: top.cnuo.warbridge.api.WarbridgeApi
+  service_registration: Bukkit ServicesManager
+  example:
+    - 'WarbridgeApi api = Bukkit.getServicesManager().load(WarbridgeApi.class);'
+    - 'if (api != null) { api.getState(); }'
+
+events:
+  - WarbridgeStateChangeEvent
+  - WarbridgeGameStartEvent
+  - WarbridgeGameEndEvent
+  - WarbridgeRoundStartEvent
+  - WarbridgeRoundEndEvent
+  - WarbridgePlayerJoinGameEvent
+  - WarbridgePlayerLeaveGameEvent
+  - WarbridgePlayerGoalEvent
+  - WarbridgePlayerKillEvent
+  - WarbridgePlayerDeathEvent
+  - WarbridgePlayerRespawnEvent
+
+expand_plugin_guide:
+  recommended_name: WarBridgeExpand
+  notes:
+    - keep long-term rewards and storage in an expansion plugin
+    - use API and events instead of directly touching internal classes
+    - PlaceholderAPI can still be used for UI, but API/events are preferred for logic
+
+team-selector:
+  enabled-stage: "Available in PENDING and HOLDING."
+  item: "Players can right click the emerald in slot 5 to open the team selector."
+  menu: "The chest menu shows team color, team name, current players, and remaining available slots."
+  note: "If a player does not choose a team, Warbridge will auto-balance at game start."
+
+
+# Added in v6
+# sounds.yml controls kill/death/goal/respawn sounds.
+# game.yml now contains bow-cooldown display mode and disconnect-rule.
+# Use /warbridge setup finish to validate required setup items.

@@ -1,0 +1,83 @@
+info:
+  language: en_US
+  note: "This file is documentation only and is not used as a live config."
+  plugin: "Warbridge"
+  author: "Chirnuo"
+  repository: "https://github.com/SenalMC/Warbridge"
+usage:
+  overview:
+    - "One backend server = one room = one Warbridge match."
+    - "The lobby matcher should read motd.yml and player counts."
+    - "For first setup, enter edit mode and finish all map points."
+  basic_commands:
+    - "/warbridge edit - Enter or leave edit mode"
+    - "/warbridge check - Validate map setup and start conditions"
+    - "/warbridge stop - Force stop the current game and enter edit mode"
+    - "/warbridge leave - Leave this backend and send player to fallbackserver"
+    - "/warbridge spectate - Toggle spectator mode"
+  setup_commands:
+    - "/warbridge setup addteam <color> <name>"
+    - "/warbridge setup setteamspawn <color>"
+    - "/warbridge setup setcagepos1 <color>"
+    - "/warbridge setup setcagepos2 <color>"
+    - "/warbridge setup setportalpos1 <color>"
+    - "/warbridge setup setportalpos2 <color>"
+    - "/warbridge setup setlobbyspawn"
+    - "/warbridge setup setspectatorspawn"
+    - "/warbridge setup setgamepos1"
+    - "/warbridge setup setgamepos2"
+    - "/warbridge setup points <number>"
+    - "/warbridge setup minplayer <number>"
+    - "/warbridge setup maxplayer <number>"
+    - "/warbridge setup teamplayer <number>"
+  setup_order:
+    - "1. /warbridge edit"
+    - "2. Create at least two teams"
+    - "3. Set spawn, cage, and portal for every team"
+    - "4. Set lobby and spectator spawns"
+    - "5. Set gamepos1 / gamepos2"
+    - "6. Run /warbridge check"
+    - "7. Run /warbridge edit again to leave edit mode"
+placeholders:
+  note: "Internal placeholders and PlaceholderAPI use the same warbridge namespace."
+  examples:
+    - "%warbridge_state% - current server state"
+    - "%warbridge_players% - current online players"
+    - "%warbridge_countdown% - start countdown"
+    - "%warbridge_round_state% - current round state"
+    - "%warbridge_player_team% - player's team"
+    - "%warbridge_player_kills% - player kills"
+    - "%warbridge_player_deaths% - player deaths"
+    - "%warbridge_player_goals% - player goals"
+    - "%warbridge_bow_cooldown_formatted% - bow cooldown text"
+    - "%warbridge_dynamic_teams% - dynamic team-line marker for scoreboard"
+configuration:
+  files:
+    - "config.yml - global settings and fallbackserver"
+    - "game.yml - gameplay settings"
+    - "map.yml - map and regions"
+    - "kits.yml - items, amounts, slots, enchants"
+    - "board.yml - sidebar scoreboard"
+    - "messages.yml / message_en.yml - system messages"
+    - "motd.yml - server list MOTD by state"
+    - "menus.yml - team selector menu config"
+  kits_tip:
+    - "Example enchant syntax: DAMAGE_ALL: 1"
+    - "Both armor and items support an enchants node"
+    - "Leather armor is automatically dyed to team color"
+
+extra_docs:
+  - technical_doc: TECHNICAL_DOC.yml
+  - technical_doc_en: TECHNICAL_DOC_en.yml
+
+team-selector:
+  enabled-stage: "Available in PENDING and HOLDING."
+  item: "Players can right click the emerald in slot 5 to open the team selector."
+  menu: "The chest menu shows team color, team name, current players, and remaining available slots."
+  note: "If a player does not choose a team, Warbridge will auto-balance at game start."
+
+
+# Added in v6
+# sounds.yml controls kill/death/goal/respawn sounds.
+# game.yml now contains bow-cooldown display mode and disconnect-rule.
+# Use /warbridge setup finish to validate required setup items.

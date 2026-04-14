@@ -1,0 +1,36 @@
+# ============================================
+# Warbridge sounds / 音效配置
+# zh_CN: 所有主要反馈音效都可以在这里调整。
+# en_US: Main feedback sounds can be customized here.
+# ============================================
+
+countdown:
+  enabled: true
+  sound: NOTE_PLING
+  volume: 1.0
+  pitch: 1.0
+kill:
+  enabled: true
+  sound: LEVEL_UP
+  volume: 1.0
+  pitch: 1.0
+death:
+  enabled: true
+  sound: NOTE_BASS
+  volume: 1.0
+  pitch: 1.0
+goal:
+  enabled: true
+  sound: LEVEL_UP
+  volume: 1.0
+  pitch: 1.2
+respawn:
+  enabled: true
+  sound: ORB_PICKUP
+  volume: 1.0
+  pitch: 1.2
+bow-ready:
+  enabled: true
+  sound: LEVEL_UP
+  volume: 1.0
+  pitch: 1.2

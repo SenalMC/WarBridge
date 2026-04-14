@@ -1,0 +1,43 @@
+# ============================================
+# Warbridge menus config / 菜单配置
+# zh_CN: 队伍选择器菜单文案与按钮都可以在这里自定义。
+# en_US: Team selector menu title, items and button text can be customized here.
+# ============================================
+
+team-selector:
+  menu:
+    title: "&8选择队伍"
+    size: 9
+
+  item:
+    # Slot of the emerald selector / 绿宝石选择器所在物品栏槽位
+    slot: 4
+    name: "&a队伍选择器"
+    lore:
+      - "&7右键打开队伍选择菜单"
+    selected-format: "&7当前队伍: %team%"
+
+  team-item:
+    name: "%team_color%%team_name%"
+    lore:
+      - "&7人数: &f%current%&7/&f%max%"
+      - "&7剩余位置: &a%remaining%"
+    click-lore:
+      - "&a点击加入该队伍"
+    selected-lore:
+      - "&e你已经在这个队伍中了"
+    full-lore:
+      - "&c该队伍已满"
+
+  random:
+    enabled: true
+    slot: 0
+    name: "&b随机分配"
+    lore:
+      - "&7让系统帮你加入人数最少的队伍"
+
+  close:
+    slot: 8
+    name: "&c关闭"
+    lore:
+      - "&7关闭队伍选择菜单"

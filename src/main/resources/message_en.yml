@@ -1,0 +1,75 @@
+# ============================================
+# Warbridge messages / System messages (English)
+# zh_CN: 英文版系统消息和随机播报池。
+# en_US: English system messages and random announcement pools.
+# ============================================
+
+prefix: "&e[Warbridge] &r"
+no-permission: "&cYou do not have permission."
+edit-enter: "&cEntered edit mode."
+edit-exit: "&aEdit mode disabled. Back to pending state."
+reload: "&aWarbridge reloaded."
+setup-only-edit: "&cPlease enter edit mode first."
+team-added: "&aTeam created: %team%"
+team-spawn-set: "&aTeam spawn set."
+cage-pos1-set: "&aCage pos1 saved."
+cage-set: "&aCage region set."
+portal-pos1-set: "&aPortal pos1 saved."
+portal-set: "&aPortal region set."
+lobby-set: "&aLobby spawn set."
+spectator-set: "&aSpectator spawn set."
+game-pos1-set: "&aGame pos1 saved."
+game-set: "&aGame region set."
+points-set: "&aPoints to win updated."
+minplayer-set: "&aMinimum players updated."
+maxplayer-set: "&aMaximum players updated."
+teamplayer-set: "&aIdeal team size updated."
+unknown-team: "&cUnknown team. Please add the team first."
+only-player: "&cOnly players can use this command."
+unknown-subcommand: "&cUnknown sub-command."
+not-enough-players: "&cNot enough players. Countdown cancelled."
+countdown-start: "&eEnough players joined. Game starts in &c%seconds% &eseconds."
+countdown-full: "&6Room full. Countdown reduced to 10 seconds."
+round-prepare: "&bRound %round% is preparing... &f%seconds%s"
+round-start: "&aRound %round% started!"
+own-goal: "&cYou entered your own portal. Counted as self-death."
+gameover: "&6Game over! Winner: %winner%"
+send-fallback: "&eGame finished. Sending you back to the lobby."
+now-spectator: "&7You are now in spectator mode."
+leave-to-lobby: "&eYou left this room and are being sent back to the lobby."
+cannot-place: "&cYou cannot place blocks there."
+bow-cooldown: "&cBow cooldown: &f%seconds%s"
+check-header: "&e[Warbridge] &fStart check result:"
+check-ok: "&aCheck passed: current config can auto start."
+check-fail: "&cCheck failed: the following issues block auto start."
+team-selector-joined: "&aYou joined team: %team%"
+team-selector-full: "&cThat team is full: %team%"
+team-selector-already: "&eYou are already in that team."
+death-message: "&7You died. Respawning in &c%seconds%s&7."
+team-empty-warning: "&cOnly %team% remains alive. If nobody returns within %seconds% seconds, the game will end."
+team-recovered: "&aA disconnected team has returned. The game continues."
+all-teams-empty: "&cAll teams are offline. This match will end as a draw."
+setup-finish-ok: "&aSetup validation passed. You can leave EDIT and start testing."
+setup-finish-fail: "&cSetup is still incomplete. Fix the following issues first."
+
+announcements:
+  kill:
+    default:
+      - "&a%killer% &7eliminated &c%victim%"
+      - "&a%killer% &7sent &c%victim% &7back to spawn"
+      - "&a%killer% &7scored a clean kill on &c%victim%"
+    special-permissions:
+      warbridge.broadcast.legend:
+        - "&6[Legend] &e%killer% &7shut down &c%victim%"
+      warbridge.broadcast.mvp:
+        - "&d[MVP] &f%killer% &7outplayed &c%victim%"
+  goal:
+    default:
+      - "&a%player% &7rushed into %portal_team% &7portal. %scoring_team% &7scores 1 point!"
+      - "&a%player% &7breaks through and scores for %scoring_team%&7!"
+      - "&a%player% &7secures the portal. %scoring_team% &7now has &e%points%"
+    special-permissions:
+      warbridge.broadcast.legend:
+        - "&6[Legend] &e%player% &7stormed straight into %portal_team% &7portal!"
+      warbridge.broadcast.mvp:
+        - "&d[MVP] &f%player% &7finishes a highlight score for %scoring_team%&7!"

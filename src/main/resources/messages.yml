@@ -1,0 +1,77 @@
+# ============================================
+# Warbridge messages / 系统消息（中文）
+# zh_CN: 这里存放普通提示、随机击杀播报、随机冲门播报。
+# en_US: This file stores common messages and random announcement pools.
+# ============================================
+
+prefix: "&e[Warbridge] &r"
+no-permission: "&c你没有权限。"
+edit-enter: "&c已进入编辑模式。"
+edit-exit: "&a已退出编辑模式，回到等待状态。"
+reload: "&aWarbridge 已重载。"
+setup-only-edit: "&c请先进入编辑模式。"
+team-added: "&a已创建队伍: %team%"
+team-spawn-set: "&a已设置队伍出生点。"
+cage-pos1-set: "&a已记录笼子 pos1。"
+cage-set: "&a已设置笼子区域。"
+portal-pos1-set: "&a已记录传送门 pos1。"
+portal-set: "&a已设置传送门区域。"
+lobby-set: "&a已设置候场出生点。"
+spectator-set: "&a已设置观战出生点。"
+game-pos1-set: "&a已记录游戏范围 pos1。"
+game-set: "&a已设置游戏范围。"
+points-set: "&a已设置达标分数。"
+minplayer-set: "&a已设置最小人数。"
+maxplayer-set: "&a已设置最大人数。"
+teamplayer-set: "&a已设置每队理想人数。"
+unknown-team: "&c队伍不存在，请先 addteam。"
+only-player: "&c只有玩家可以使用该命令。"
+unknown-subcommand: "&c未知子命令。"
+not-enough-players: "&c人数不足，已取消倒计时。"
+countdown-start: "&e人数已满足，游戏将在 &c%seconds% &e秒后开始。"
+countdown-full: "&6房间已满，倒计时缩短至 10 秒。"
+round-prepare: "&b第 %round% 小回合准备中... &f%seconds%秒"
+round-start: "&a第 %round% 小回合开始！"
+own-goal: "&c你跳进了己方传送门，判定为乌龙球。"
+gameover: "&6游戏结束！胜利方: %winner%"
+send-fallback: "&e游戏结束，即将返回大厅服。"
+now-spectator: "&7你现在处于观战模式。"
+leave-to-lobby: "&e你已离开当前战桥房间，正在返回大厅。"
+cannot-place: "&c该位置不能放置方块。"
+bow-cooldown: "&c弓箭冷却中: &f%seconds%s"
+check-header: "&e[Warbridge] &f开局检查结果:"
+check-ok: "&a检查通过：当前配置满足自动开局条件。"
+check-fail: "&c检查未通过：以下问题会阻止自动开局。"
+team-selector-joined: "&a你已加入队伍: %team%"
+team-selector-full: "&c该队伍已满，无法加入: %team%"
+team-selector-already: "&e你已经在这个队伍里了。"
+death-message: "&7你已死亡，将在 &c%seconds%s &7后复活。"
+team-empty-warning: "&c场上仅剩 %team% 存活。若 %seconds% 秒内没有其他队伍玩家返回，游戏将结束。"
+team-recovered: "&a离线队伍已有玩家返回，比赛继续。"
+all-teams-empty: "&c所有队伍都已离线，本局将按平局处理。"
+setup-finish-ok: "&a配置检查通过，可以退出 EDIT 并开始测试。"
+setup-finish-fail: "&c配置仍不完整，请先修复以下问题。"
+
+# Random announcement pools / 随机播报池
+announcements:
+  kill:
+    default:
+      - "&a%killer% &7击败了 &c%victim%"
+      - "&a%killer% &7将 &c%victim% &7送回了重生点"
+      - "&a%killer% &7成功击杀了 &c%victim%"
+    # Special broadcast by permission / 特殊权限玩家专属播报
+    special-permissions:
+      warbridge.broadcast.legend:
+        - "&6[传奇播报] &e%killer% &7强势终结了 &c%victim%"
+      warbridge.broadcast.mvp:
+        - "&d[MVP] &f%killer% &7华丽拿下了 &c%victim%"
+  goal:
+    default:
+      - "&a%player% &7冲入了 %portal_team% &7传送门，%scoring_team% &7获得 1 分！"
+      - "&a%player% &7完成了关键突破，%scoring_team% &7拿下 1 分！"
+      - "&a%player% &7成功破门，%scoring_team% &7当前得分：&e%points%"
+    special-permissions:
+      warbridge.broadcast.legend:
+        - "&6[传奇播报] &e%player% &7势不可挡地冲进了 %portal_team% &7传送门！"
+      warbridge.broadcast.mvp:
+        - "&d[MVP] &f%player% &7完成精彩得分，%scoring_team% &7气势如虹！"

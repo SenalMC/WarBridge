@@ -1,0 +1,32 @@
+# ============================================
+# Warbridge MOTD / 服务器列表信息
+# zh_CN: 用于大厅/匹配系统通过 MOTD 识别当前房间状态。
+# en_US: Used by lobbies/matchmaking to detect room state from server ping.
+# ============================================
+
+enabled: true
+motds:
+  pending:
+    line1: "&a[PENDING] &f战桥房间 &7- &e等待玩家中"
+    line2: "&f人数: &a%warbridge_players%&7/&a%warbridge_max_players%"
+  holding:
+    line1: "&e[HOLDING] &f战桥房间 &7- &6即将开始"
+    line2: "&f倒计时: &c%warbridge_countdown%s"
+  gaming:
+    line1: "&c[GAMING] &f战桥房间 &7- &c游戏进行中"
+    line2: "&f回合: &6%warbridge_round_state% &8| &f目标: &e%warbridge_points_to_win%"
+  gameover:
+    line1: "&b[GAMEOVER] &f战桥房间 &7- &7结算中"
+    line2: "&f胜者: %warbridge_winner%"
+  edit:
+    line1: "&8[EDIT] &f战桥房间 &7- &c维护中"
+    line2: "&7当前不可加入"
+player-count:
+  gaming:
+    use-real: false
+  gameover:
+    use-real: false
+  edit:
+    use-real: false
+    shown-online: 0
+    shown-max: 0

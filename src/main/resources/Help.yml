@@ -1,0 +1,83 @@
+info:
+  language: zh_CN
+  note: "本文件仅作教程展示，不参与插件运行配置。"
+  plugin: "Warbridge"
+  author: "Chirnuo"
+  repository: "https://github.com/SenalMC/Warbridge"
+usage:
+  overview:
+    - "一个子服 = 一个房间 = 一局战桥。"
+    - "大厅匹配系统建议结合 motd.yml 与在线人数使用。"
+    - "首次使用时请先进入编辑模式并完成地图设置。"
+  basic_commands:
+    - "/warbridge edit - 进入或退出编辑模式"
+    - "/warbridge check - 检查当前地图与开局条件是否完整"
+    - "/warbridge stop - 强制停止当前对局并进入编辑模式"
+    - "/warbridge leave - 离开当前子服并回到 fallbackserver"
+    - "/warbridge spectate - 切换到观战模式"
+  setup_commands:
+    - "/warbridge setup addteam <颜色> <名称>"
+    - "/warbridge setup setteamspawn <颜色>"
+    - "/warbridge setup setcagepos1 <颜色>"
+    - "/warbridge setup setcagepos2 <颜色>"
+    - "/warbridge setup setportalpos1 <颜色>"
+    - "/warbridge setup setportalpos2 <颜色>"
+    - "/warbridge setup setlobbyspawn"
+    - "/warbridge setup setspectatorspawn"
+    - "/warbridge setup setgamepos1"
+    - "/warbridge setup setgamepos2"
+    - "/warbridge setup points <数字>"
+    - "/warbridge setup minplayer <数字>"
+    - "/warbridge setup maxplayer <数字>"
+    - "/warbridge setup teamplayer <数字>"
+  setup_order:
+    - "1. /warbridge edit"
+    - "2. 创建至少两个队伍"
+    - "3. 设置每个队伍的出生点、笼子、传送门"
+    - "4. 设置 lobby 与 spectator 出生点"
+    - "5. 设置 gamepos1 / gamepos2"
+    - "6. 执行 /warbridge check 查看是否能开局"
+    - "7. 再次执行 /warbridge edit 退出编辑模式"
+placeholders:
+  note: "内部变量与 PlaceholderAPI 共用同一套 warbridge 变量。"
+  examples:
+    - "%warbridge_state% - 当前服务器状态"
+    - "%warbridge_players% - 当前在线人数"
+    - "%warbridge_countdown% - 开局倒计时"
+    - "%warbridge_round_state% - 当前小回合状态"
+    - "%warbridge_player_team% - 玩家所在队伍"
+    - "%warbridge_player_kills% - 玩家击杀数"
+    - "%warbridge_player_deaths% - 玩家死亡数"
+    - "%warbridge_player_goals% - 玩家得分数"
+    - "%warbridge_bow_cooldown_formatted% - 弓箭冷却文本"
+    - "%warbridge_dynamic_teams% - 计分板动态队伍行标记"
+configuration:
+  files:
+    - "config.yml - 全局设置与 fallbackserver"
+    - "game.yml - 玩法参数"
+    - "map.yml - 地图与区域"
+    - "kits.yml - 装备、数量、槽位、附魔"
+    - "board.yml - 侧边栏显示"
+    - "messages.yml / message_en.yml - 系统消息"
+    - "motd.yml - 不同阶段服务器列表 MOTD"
+    - "menus.yml - 队伍选择器菜单配置"
+  kits_tip:
+    - "附魔写法示例：DAMAGE_ALL: 1"
+    - "armor 与 items 都支持 enchants 节点"
+    - "皮革装备会自动按队伍颜色染色"
+
+extra_docs:
+  - 技术文档文件: TECHNICAL_DOC.yml
+  - 英文技术文档: TECHNICAL_DOC_en.yml
+
+team-selector:
+  enabled-stage: "仅在 PENDING 和 HOLDING 阶段可用。"
+  item: "玩家可以右键物品栏第 5 格的绿宝石打开队伍选择菜单。"
+  menu: "菜单会显示队伍颜色、队伍名称、当前人数、还可加入人数。"
+  note: "如果玩家不手动选队，游戏开始时仍会自动均衡分配。"
+
+
+# Added in v6
+# sounds.yml controls kill/death/goal/respawn sounds.
+# game.yml now contains bow-cooldown display mode and disconnect-rule.
+# Use /warbridge setup finish to validate required setup items.

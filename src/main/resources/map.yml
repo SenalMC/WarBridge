@@ -1,0 +1,16 @@
+# ============================================
+# Warbridge map config / 地图配置
+# zh_CN: 该文件通常由 /warbridge setup 自动生成与修改。
+#如果您出现了一些问题
+# en_US: This file is usually generated and edited by /warbridge setup.
+# ============================================
+
+world: world
+lobby:
+  spawn: ""
+spectator:
+  spawn: ""
+regions:
+  game-pos1: ""
+  game-pos2: ""
+teams: {}

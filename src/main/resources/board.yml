@@ -1,0 +1,57 @@
+# ============================================
+# Warbridge scoreboard / 计分板配置
+# zh_CN: 可按状态显示不同板子，支持变量与动态队伍行。
+# en_US: Different boards by state, supports placeholders and dynamic team rows.
+# ============================================
+
+enabled: true
+update-ticks: 20
+title: "&e&lWarbridge"
+boards:
+  pending:
+    - "&7等待玩家中"
+    - ""
+    - "&f状态: &e%warbridge_state%"
+    - "&f人数: &a%warbridge_players%&7/&a%warbridge_max_players%"
+    - "&f最少开局: &b%warbridge_min_players%"
+    - ""
+    - "&f服务器: &7%warbridge_server%"
+  holding:
+    - "&6即将开始"
+    - ""
+    - "&f倒计时: &c%warbridge_countdown%"
+    - "&f人数: &a%warbridge_players%&7/&a%warbridge_max_players%"
+    - "%warbridge_dynamic_teams%"
+  gaming:
+    - "&f状态: &e%warbridge_state%"
+    - "&f回合: &6%warbridge_round_state%"
+    - "&f剩余: &b%warbridge_game_time_left%"
+    - ""
+    - "%warbridge_dynamic_teams%"
+    - ""
+    - "&f队伍: %warbridge_player_team%"
+    - "&f击杀: &a%warbridge_player_kills%"
+    - "&f死亡: &c%warbridge_player_deaths%"
+    - "&f得分: &e%warbridge_player_goals%"
+    - "&f弓CD: &6%warbridge_bow_cooldown_formatted%"
+  gaming-spectator:
+    - "&7观战模式"
+    - ""
+    - "&f状态: &e%warbridge_state%"
+    - "&f回合: &6%warbridge_round_state%"
+    - "&f剩余: &b%warbridge_game_time_left%"
+    - ""
+    - "%warbridge_dynamic_teams%"
+  gameover:
+    - "&7本局结束"
+    - ""
+    - "&f胜者: %warbridge_winner%"
+    - "%warbridge_dynamic_teams%"
+    - ""
+    - "&f返回大厅: &e%warbridge_gameover_left%"
+  edit:
+    - "&c&l编辑模式"
+    - ""
+    - "&f状态: &e%warbridge_state%"
+    - "&f队伍数: &b%warbridge_team_count%"
+    - "&f使用: &a/warbridge setup"

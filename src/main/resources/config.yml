@@ -1,0 +1,37 @@
+# ===============================
+# Warbridge global config / 全局配置
+# zh_CN: 该文件用于控制插件的全局行为。
+# en_US: This file controls global plugin behavior.
+# ===============================
+
+# Server ID shown in placeholders / 占位符中显示的服务器编号
+server-id: warbridge_1
+
+# Language locale / 语言
+# zh_CN or en_US
+locale: zh_CN
+
+# Fallback Bungee server / 游戏结束或离开后返回的大厅服
+fallbackserver: lobby
+
+# Startup state / 启动状态
+# PENDING / EDIT
+state-on-startup: PENDING
+
+# Whether players may still join during HOLDING / HOLDING 阶段是否允许进入
+allow-join-during-holding: true
+
+# Whether gaming state allows spectator join / GAMING 阶段是否允许作为观战加入
+allow-spectator-join-when-gaming: true
+
+# Whether gameover sends players back to fallback / GAMEOVER 后是否回大厅
+send-fallback-on-gameover: true
+
+# Delay before send-back / 回传大厅前等待秒数
+gameover-send-delay-seconds: 8
+
+# Enable sidebar scoreboard / 是否启用计分板
+scoreboard: true
+
+# Generic title switch / 通用 Title 总开关
+title: false

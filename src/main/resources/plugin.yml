@@ -1,0 +1,17 @@
+name: Warbridge
+main: top.cnuo.warbridge.WarbridgePlugin
+version: 1.0.3
+author: Chirnuo
+softdepend: [PlaceholderAPI]
+commands:
+  warbridge:
+    aliases: [wb]
+    usage: /warbridge
+    description: Warbridge main command
+permissions:
+  warbridge.admin:
+    default: op
+  warbridge.edit:
+    default: op
+  warbridge.spectate:
+    default: true

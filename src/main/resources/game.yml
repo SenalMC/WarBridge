@@ -1,0 +1,117 @@
+# ============================================
+# Warbridge gameplay config / 对局规则配置
+# zh_CN: 这个文件控制玩法、伤害、弓箭冷却、离线判负等逻辑。
+# en_US: This file controls gameplay rules, damage, bow cooldown and disconnect logic.
+# ============================================
+
+# Points required to win / 达标分数
+points: 5
+
+# Minimum and maximum players / 最小与最大玩家数
+min-players: 2
+max-players: 8
+
+# Ideal players per team / 每队理想人数
+teamplayer: 4
+
+# Countdown before the whole match starts / 整局开始倒计时
+countdown-seconds: 30
+full-countdown-seconds: 10
+
+# Prepare time inside cages / 笼内准备时间
+prepare-seconds: 5
+
+# Delay between rounds after a score / 得分后回合间隔
+round-end-seconds: 5
+
+# Whole match time limit / 整场时间上限
+time-limit-seconds: 600
+
+# Death respawn delay / 死亡复活时间
+respawn-delay: 3
+
+# Invulnerability after respawn / 复活保护时间
+respawn-protection-seconds: 2
+
+# Void line / 虚空线
+void-y: 40
+
+# Seconds for last-damager credit / 虚空击杀归属时间
+last-damage-seconds: 8
+
+# Temporary cage material / 临时笼子材质
+cage-material: GLASS
+
+# Countdown sound in last seconds / 倒计时音效
+countdown-sound: NOTE_PLING
+
+# Materials players may place / 允许放置的材质
+allowed-place-materials:
+  - WOOL
+
+# Friendly fire / 是否允许友伤
+friendly-fire: false
+
+# Hunger behavior / 是否掉饱食度
+hunger:
+  enabled: false
+
+# Item drop rule / 是否允许丢弃物品
+item-drop:
+  enabled: false
+
+# Item pickup rule / 是否允许拾取物品
+item-pickup:
+  enabled: false
+
+# Inventory rearrangement / 是否允许在对局中整理背包
+inventory:
+  rearrange-enabled: false
+
+# Block / container interaction rules / 交互规则
+interaction:
+  chest: false
+  lever: false
+  button: false
+  door: false
+  pressure-plate: true
+
+# Damage switches / 伤害开关
+damage:
+  fall: false
+  fire: false
+  lava: false
+
+# Playtime / kill rewards placeholders for future expand plugin
+# 游玩时长与击杀奖励占位，方便以后对接扩展插件
+rewards:
+  playtime-exp-per-tick: 0
+  playtime-coins-per-tick: 0
+  kill-exp: 0
+  kill-coins: 0
+
+# Empty-team disconnect rule / 全队离线判负规则
+disconnect-rule:
+  enabled: true
+  empty-team-end-delay: 15
+  allow-team-recover: true
+  draw-if-all-teams-empty: true
+
+# Bow cooldown / 弓箭冷却
+bow-cooldown:
+  enabled: true
+  seconds: 2.5
+  display:
+    # ActionBar display / 是否显示 ActionBar
+    actionbar: true
+    # Title / Subtitle display / 是否显示 Title 副标题
+    title: true
+  actionbar-format: "&e弓箭冷却中: &c%time%s"
+  ready-actionbar: "&a弓箭已就绪"
+  title:
+    title: "&c弓箭冷却中"
+    subtitle: "&f剩余 &e%time%s"
+    ready-subtitle: "&a弓箭已就绪"
+    fadein: 0
+    stay: 10
+    fadeout: 5
